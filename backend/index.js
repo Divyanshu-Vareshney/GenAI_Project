@@ -4,6 +4,7 @@ import connectDB from './Database/db.js';
 import userRoute from './Routes/UserRoute.js'
 dotenv.config();
 const app=express();
+app.use(express.json());
 
 
 app.use("/api/user",userRoute);
