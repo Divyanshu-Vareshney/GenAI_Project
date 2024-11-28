@@ -11,6 +11,10 @@ const Sidebar = ({isOpen,toggleSidebar}) => {
       deleteChat(id);
     }
   }
+  const clickEvent=(id)=>{
+    setSelected(id);
+    toggleSidebar()
+  }
   return (
     <div className={`fixed inset-0 bg-gray-800 p-4 transition-transform transform 
     md:relative md:translate-x-0 md:w-1/4 md:block ${isOpen?"translate-x-0":"-translate-x-full"}`}>
@@ -24,7 +28,7 @@ const Sidebar = ({isOpen,toggleSidebar}) => {
         <div className="max-h-[500px] overflow-y-auto mb-20 md:mb-0 thin-scrollbar">
             {
               chats && chats.length>0?chats.map((element)=>(
-                <button onClick={()=>setSelected(element._id)} key={element._id} className="w-full text-left py-2 px-2 bg-gray-700 hover:bg-gray-600 rounded mt-2 flex justify-between items-center ">
+                <button onClick={()=>clickEvent(element._id)} key={element._id} className="w-full text-left py-2 px-2 bg-gray-700 hover:bg-gray-600 rounded mt-2 flex justify-between items-center ">
                 <span>{element.latestMessage.slice(0,38)}...</span>
                 <button onClick={()=>deleteChatHandler(element._id)} className="bg-red-600 text-white text-xl px-3 py-2 rounded-md hover:bg-red-700" ><MdDelete /></button>
             </button>
