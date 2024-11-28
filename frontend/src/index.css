@@ -10,3 +10,7 @@ input[type='number']::-webkit-inner-spin-button {
   @apply appearance-none;
   margin: 0;
 }
+.thin-scrollbar{
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}

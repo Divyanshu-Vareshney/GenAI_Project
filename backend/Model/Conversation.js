@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const schema=new mongoose.Schema({
-    user:{
+    chat:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Chat',
         required:true,
